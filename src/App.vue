@@ -4,6 +4,8 @@ import LoanDetails from './components/LoanDetails.vue';
 import EmiDetail from './components/EmiDetail.vue';
 import EmiChart from './components/EmiChart.vue';
 import CreditScore from './components/CreditScore.vue';
+import HousingLoan from './components/HousingLoan.vue';
+import LoanChart from './components/LoanChart.vue';
 // import CreditScoreChart from './components/CreditScoreChart.vue';
 
 
@@ -12,8 +14,11 @@ export default {
   name: 'App',
   components: {
     LoanDetails,
+    HousingLoan,
+    // LoanChart,
     EmiDetail,
-    EmiChart,
+    // EmiChart,
+   
     CreditScore,
     // CreditScoreChart,
   
@@ -31,12 +36,15 @@ export default {
       <LoanDetails/>
       <br>
       <br>
+  
+      <!-- <LoanChart/> -->
       <br>
        <EmiDetail/>
        <br>
        <br>
-       <EmiChart/>
+       <!-- <EmiChart/> -->
        <br>
+       <HousingLoan/>
        <br>
        <CreditScore/>
        <!-- <CreditScoreChart/> -->
@@ -52,6 +60,7 @@ export default {
   font-family: Arial, sans-serif;
   text-align: center;
   margin-top: 20px;
+  
 }
 header {
   background: #f8f9fa;

@@ -1,6 +1,8 @@
 <script>
 import axios from "axios";
+import creditpic from "@/assets/creditpic.jpg";
 
+const imageSrc = creditpic;
 export default {
   data() {
     return {
@@ -13,6 +15,7 @@ export default {
       isVerified: false,
       showOtpBox: false,
       agreedToIPD: false, // Controls checkbox status
+      creditpic,
     };
   },
   methods: {
@@ -80,11 +83,13 @@ export default {
 </script>
 
 <template>
+  <h1 class="creditheading">Check Your Credit Score</h1>
+
   <div class="credit-score-container">
  
 
     <div class="form-box">
-        <h2>Enter your details to access your
+        <h2 >Enter your details to access your
             credit score</h2>
       <div class="input-group">
         <label>First Name As Per Bank record</label>
@@ -134,23 +139,43 @@ export default {
         <button @click="verifyOTP">Get Your Reports</button>
       </div>
     </div>
+    <div class="creditposter">
+   
+      <img :src="creditpic" alt="Credit Image" />
+    </div>
   </div>
 </template>
 
 <style>
 .credit-score-container {
-  text-align: center;
+  /* text-align: center; */
   margin-top: 20px;
+  display: flex;
+  
+ 
 }
-
+.creditheading{
+  text-align: left;
+  margin-bottom: 45px;
+  margin-left: 28px;
+}
+img {
+  width: 500px;
+  height: 605px;
+  /* margin-top: 10px; */
+  border-radius: 10px;
+  margin-left: 140px;
+}
 /* Form Box with Outline */
 .form-box {
-  border: 2px solid #007bff;
+  border: 1px solid #007bff;
   padding: 20px;
   border-radius: 10px;
-  width: 350px;
-  margin: 20px auto;
-  background: #f8f9fa;
+  width: 450px;
+  margin: 0 20px 20px 30px;
+  background: #ffffff;
+  text-align: left;
+
 }
 
 /* Input Styles */
@@ -183,7 +208,7 @@ input {
   display: block;
   height: 2px;
   width: 100%;
-  background-color: #007bff;
+  background-color: #0e0e0e;
   margin-top: -3px;
 }
 
@@ -195,6 +220,7 @@ input {
   gap: 8px;
   margin-top: 10px;
   font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
   font-weight: 200;
   size: 15px;
   line-height: 17.58px;

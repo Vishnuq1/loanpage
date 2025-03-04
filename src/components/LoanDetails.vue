@@ -7,8 +7,16 @@
     </div>
 
 <div class="sbi">
-<!-- logo of sbi will there just beside name of SBI -->
-<h2>State Bank Of India</h2>
+
+
+  <div class="sbi-container">
+    <!-- SBI Logo on the left -->
+    <img :src="sbiLogo" alt="SBI Logo" class="sbi-logo" />
+
+    <!-- Bank Name on the right -->
+    <h2 class="sbi-title">State Bank Of India</h2>
+  </div>
+
 
 <div class="detail"> 
 <div class="a">
@@ -33,8 +41,18 @@
 </div>
 
 <div class="sbi">
-    <!-- logo of sbi will there just beside name of PNB -->
-<h2>Punjab National Bank Of India</h2>
+
+
+  <div class="sbi-container">
+    <!-- SBI Logo on the left -->
+    <img :src="pnbLogo" alt="SBI Logo" class="sbi-logo" />
+
+    <!-- Bank Name on the right -->
+    <h2 class="sbi-title">Punjab National Bank</h2>
+  </div>
+
+
+
 <div class="detail">
     <div class="a">
 <h4>Loan Type</h4>
@@ -59,8 +77,15 @@
 
 
 <div class="sbi">
-     <!-- logo of sbi will there just beside name of Axis -->
-<h2>Axis Bank Of India</h2>
+  <div class="sbi-container">
+    <!-- SBI Logo on the left -->
+    <img :src="axisLogo" alt="SBI Logo" class="sbi-logo" />
+
+    <!-- Bank Name on the right -->
+    <h2 class="sbi-title">    Axis Bank</h2>
+  </div>
+
+
 <div class="detail">
     <div class="a">
         <h4>Loan Type</h4>
@@ -84,8 +109,14 @@
 
 
 <div class="sbi">
-     <!-- logo of sbi will there just beside name of Kotak -->
-<h2>Kotak Mahindra Bank</h2>
+  <div class="sbi-container">
+    <!-- SBI Logo on the left -->
+    <img :src="kotakLogo" alt="SBI Logo" class="sbi-logo" />
+
+    <!-- Bank Name on the right -->
+    <h2 class="sbi-title">Kotak Mahindra Bank</h2>
+  </div>
+
 <div class="detail">
     <div  class="a">
         <h4>Loan Type</h4>
@@ -110,8 +141,14 @@
 
 
 <div class="sbi">
-     <!-- logo of sbi will there just beside name of hdfc -->
-<h2>HDFC Bank</h2>
+  <div class="sbi-container">
+    <!-- SBI Logo on the left -->
+    <img :src="hdfcLogo" alt="SBI Logo" class="sbi-logo" />
+
+    <!-- Bank Name on the right -->
+    <h2 class="sbi-title">HDFC Bank</h2>
+  </div>
+
 <div class="detail">
     <div  class="a">
         <h4>Loan Type</h4>
@@ -262,6 +299,12 @@
 
 
 <script>
+import sbiLogo from "@/assets/sbi.jpg"; // ✅ Import image from assets folder
+import pnbLogo from "@/assets/pnb.jpg";
+import axisLogo from "@/assets/axis.jpg";
+import kotakLogo from "@/assets/kotak.jpg";
+import bobLogo from "@/assets/bob.jpg";
+import hdfcLogo from "@/assets/hdfc.jpg";
 
   //   import {
   //     Chart as ChartJS,
@@ -345,7 +388,7 @@
   //     },
   //   }
  
-    
+
 
 
   export default {
@@ -354,7 +397,14 @@
       selectedLoanType: "", // Store selected Loan Type
       selectedProfession: "", // Store selected Profession Type
       loanTypes: ["Home Loan", "Balance Transfer", "Loan Against Property"],
-      professionTypes: ["Salaried", "Business", "Self Employed"],
+      professionTypes: ["Salaried", "Business", "  Self Employed "],
+      sbiLogo, // ✅ Assign imported image to a variable
+      pnbLogo,
+      axisLogo,
+      kotakLogo,
+      bobLogo,
+      hdfcLogo,
+
     };
   },
   methods: {
@@ -382,62 +432,107 @@
 .one {
   display: grid;
   grid-template-columns: 1fr 1fr; 
-  gap: 60px; 
- 
+  gap: 140px; 
+  position: relative; 
 }
 
 .enquiry_form {
 
-  padding: 20px;
+  /* padding: 20px;
   text-align: left;
   overflow: visible;
   border: 1px solid #cdcdcd;
   border-radius: 10px; 
   max-width: 500px;
-  height: 120vh;
-}
-.partner_banks {
+  height: 112vh; */
 
   padding: 20px;
+  text-align: left;
+  border: 1px solid #cdcdcd;
+  border-radius: 10px;
+  max-width: 500px;
+  height: auto; /* Adjust height dynamically */
+  position: sticky;
+  top: 20px; /* Stick to top when scrolling */
+  align-self: flex-start; /* Aligns to the top of flex container */
+}
+.partner_banks {
+flex: 1;
+
+
+
+  padding: 20px 20px 5px 20px;
   text-align: center;
   border: 1px solid #ccc;
   border-radius: 10px;
   /* max-width: 500px */
   min-width: 500px;
 }
+.headinglogo{
+  display:flex;
+  justify-items: left;
+  justify-content: left;
+  margin-left: 0;
+  padding-left: 0;
+  padding-right: 20px;
+}
 .sbi{
     outline: 1px solid rgb(10, 10, 10);
     outline-offset: 5px; 
   
-  margin: 50px; 
+  margin: 40px; 
 
   text-align: center;
   background: white;
 
-  padding: 5px 10px 10px 10px;
+  padding: 5px 5px 10px 5px;
   border-radius: 8px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 10px; /* ✅ Spacing between logo and text */
+
+}
+
+.sbi-container {
+  display: flex;
+  align-items: left;
+  gap: 10px; /* Space between logo & text */
+ padding-left: 0;
+}
+.sbi-title {
+  margin: 0;
+  font-size: 22px;
+  padding-top: 15px;
 }
 .sbi:hover {
   transform: translateY(-5px); 
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
 }
+.sbi-logo {
+  width: 100px; /* ✅ Resize image */
+  height: auto;
+  margin-left: 0;
+}
+
 .detail{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    padding-top: 5px;
+    padding-top: 5px;
 }
 .a h4, 
 .a h5 {
   margin: 0; 
-  padding: 0; 
+  padding: 2px; 
   line-height: 1;
 }
 .enq{
     text-align: center;
 }
 .placeholder_detail1 p {
+  margin-top: 5px;
   margin-bottom: 5px; /* Reduces space below labels */
+  
 }
 .underline-input {
   border: none; /* Removes the box */
@@ -450,34 +545,38 @@ margin-bottom: 5px;
 }
 .address {
   display: flex;
+  
+  margin-top: 5px;
+  margin-bottom: 5px; 
   gap: 50px; /* Adds space between input fields */
 }
 
 .address input {
-  width: 30%; /* Adjust width as needed */
+  width: 75%; /* Adjust width as needed */
   text-align: center;
   height: 30px;
   font-size: 15px;
   /* padding: 10px; */
   border: 2px solid #ccc;
   border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px; 
 }
 .btn_loan {
   display: flex;
   justify-content: center; /* Center buttons */
   gap: 20px; /* Space between buttons */
+  margin-top: 5px;
+  margin-bottom: 15px; 
+ 
+  
  
 }
 
 
 
 
-.btn_loan, .profession {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 10px;
-}
+
 
 
 
@@ -488,37 +587,54 @@ margin-bottom: 5px;
   font-size: 15px; /* Increase font size */
   font-weight: lighter; /* Make text bold */
   width: 250px; /* Set a fixed width */
-  height: 50px; /* Set a fixed height */
-  border: none;
-  /* background-color: #007bff;  */
-  /* color: rgb(7, 7, 7); */
+  height: 60px; /* Set a fixed height */
+  border: 1px solid black;
+  background-color: #ffffff; 
+  color: rgb(7, 7, 7);
   border-radius: 10px; /* Rounded edges */
   cursor: pointer;
   transition: transform 0.2s, background-color 0.3s;
+
 }
 
 .btn_loan button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #6FA1FF; /* Darker blue on hover */
   transform: scale(1.05); /* Slight zoom effect */
   color: white;
   font-weight: bold;
 }
 
-.professsion {
+.profession {
+  padding-top: 5px;
   display: flex;
-  justify-content: center; /* Center buttons */
-  gap: 20px; /* Space between buttons */
-  /* margin-top: 20px; */
+  gap: 15px; /* Space between buttons */
+  flex-wrap: nowrap; /* Prevents wrapping to the next line */
+  justify-content: center; /* Centers buttons */
+}
 
+.profession button {
+  text-align: center;
+  padding: 10px 30px; /* Bigger padding for larger size */
+  font-size: 16px; /* Increase font size */
+  font-weight: lighter; /* Make text bold */
+  width: 250px; /* Set a fixed width */
+  height: 60px; /* Set a fixed height */
+  border: 1px solid black;
+  background-color: #ffffff; /* Match Loan Type button color */
+  color: #000000; /* White text */
+  border-radius: 10px; /* Rounded edges */
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
 }
 
 
+.profession button:hover {
+  background-color: #6FA1FF; /* Same hover effect as loan type */
+  transform: scale(1.05); /* Slight zoom effect */
+  color: white;
+  font-weight: bold;
+}
 
-/* .professsion button:hover {
-    color: white;
-  background-color: #0056b3; 
-  transform: scale(1.05); 
-} */
 .submit {
   display: flex;
   flex-direction: column; /* Stack items vertically */
@@ -568,52 +684,34 @@ h5 {
   margin-top: 10px; /* Adjust spacing */
 }
 
-button {
+/* button {
   padding: 10px 20px;
   border: 2px solid #ccc;
-  background-color: #f0f0f0;
+  background-color: #fbfbfb;
   cursor: pointer;
   transition: 0.3s;
+} */
+button {
+    margin: 10px;
+    padding: 8px 15px;
+    cursor: pointer;
+    border: none;
+    background-color: #6FA1FF;
+    color: white;
+    border-radius: 5px;
+    width: 100%;
 }
-
 button:hover {
-  background-color: #e0e0e0;
+  background-color: #6FA1FF;
 }
 
 /* Highlight selected button in blue */
 button.selected {
-  background-color: blue;
+  background-color: #6FA1FF;
   color: white;
-  border-color: blue;
+  /* border-color: blue; */
 }
 
 
 </style>
 
-.professsion button {
-  padding: px 40px; /* Bigger padding for larger size */
-  font-size: 15px; /* Increase font size */
-  font-weight: lighter; /* Make text bold */
-  width: 250px; /* Set a fixed width */
-  height: 50px; /* Set a fixed height */
-  border: none;
-  /* background-color: #007bff;  */
-  color: rgb(6, 6, 6);
-  border-radius: 10px; /* Rounded edges */
-  cursor: pointer;
-  transition: transform 0.2s, background-color 0.3s;
-}
-
-.submit-btn {
-  width: 280px;
-  height: 70px;
-  font-size: 22px;
-  font-weight: bold;
-  /* background-color: #007bff; */
-  color: white;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-bottom: 15px; /* Space between button & text */
-}
