@@ -2,7 +2,10 @@
 
    <template>
     <div class="faq-container">
-      <h1 class="faqheading">Frequently Asked Questions About Home Loans</h1>
+      <h1 class="faqheading">
+  <span class="bold-faq">Frequently Asked Questions</span><br>About Home Loans
+</h1>
+
   
       <!-- Buttons to switch FAQ sets -->
       <div class="faq-button-group">
@@ -85,10 +88,19 @@
   
   <style scoped>
   /* Container */
-  .faq-container {
-    text-align: center;
-    margin: 20px;
-  }
+  .faqheading {
+  font-size: 28px; /* Adjust size as needed */
+  font-weight: normal;
+  text-align: left; /* Align text to the left */
+  line-height: 1; /* Remove extra space between lines */
+  margin-bottom: 5px; /* Remove bottom margin */
+  margin-left: 0px; /* Align to the left */
+}
+
+.bold-faq {
+  font-weight: 600; /* Bold text for "Frequently Asked Questions" */
+}
+
   ul {
   list-style: none; /* Removes default bullet points */
   padding: 0; /* Removes default padding */
@@ -121,20 +133,22 @@ li:last-child {
   /* FAQ Buttons */
   .faq-button {
     padding: 10px 15px;
-    font-size: 15px;
+    font-size: 16px;
   
-    width:131px;
+    width:141px;
     height:50px;
+    /* width:250px;
+    height:60px; */
     cursor: pointer;
     border: 1px solid black;
     background-color: #fffdfd; 
     color: black;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease;
   }
   
   .faq-button.active, .faq-button:hover {
-    background-color: #0056b3;
+    background-color: #007bff;
     color: white;
   }
   
@@ -146,6 +160,7 @@ li:last-child {
     width:1104px;
     height: 559px;
     background-color: #FCF8F8 ;
+ 
   }
  
   /* Questions */

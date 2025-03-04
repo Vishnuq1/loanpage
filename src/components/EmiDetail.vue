@@ -408,7 +408,11 @@
 
 
    <template>
-    <h1 class="emiheading">Calculate EMI For the Loan Amount You Require</h1>
+<h1 class="emiheading">
+  Calculate <span class="bold-emi">EMI</span>
+</h1>
+<h1 class="subheading">For the Loan Amount You Require</h1>
+
     <div class="calculator-container">
       <h2>Loan EMI Calculator</h2>
   
@@ -498,14 +502,37 @@
   
   <style scoped>
 
-  .emiheading {
+  /* .emiheading {
 
   bottom: 0;
   left: 0;
   padding: 10px;
   text-align: left;
   margin-bottom: 10px;
+} */
+.emiheading {
+  font-size: 28px; /* Adjust size if needed */
+  font-weight: normal;
+  text-align: left; /* Align text to the left */
+  line-height: 1; /* Remove extra space */
+  margin-bottom: 10px; /* Remove bottom margin */
+  margin-left: 10px; /* Adjust left margin if needed */
 }
+
+.bold-emi {
+  font-weight: 600; /* Extra thick EMI */
+}
+
+.subheading {
+  font-size: 24px; /* Adjust size if needed */
+  font-weight: normal;
+  text-align: left; /* Align text to the left */
+  margin-top: 0; /* Remove top margin */
+  line-height: 1; /* Ensures no extra space */
+  margin-left: 10px; /* Adjust left margin if needed */
+  margin-bottom: 10px;
+}
+
 
 
   .calculator-container {

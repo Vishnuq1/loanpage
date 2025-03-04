@@ -1341,7 +1341,11 @@ button:disabled {
 
 
    <template>
-    <h1 class="housingheading">Calculate Housing Loan Eligibility</h1>
+ <h1 class="housingheading">Calculate 
+  <span class="bold-housing">Housing Loan</span><br>
+  Eligibility
+</h1>
+
     <div class="housing-loan-calculator">
       <div class="calculator-container">
         <form @submit.prevent="calculateEligibility">
@@ -1389,17 +1393,30 @@ button:disabled {
           <button type="submit" :disabled="!isFormValid">Calculate Eligibility</button>
   
           <!-- Monthly EMI and Loan Eligibility Below Submit Button -->
-          <div v-if="eligibilityAmount !== null" class="emi-container">
+          <!-- <div v-if="eligibilityAmount !== null" class="emi-container">
             <h3>Eligible Loan Amount: ₹{{ eligibilityAmount.toLocaleString() }}</h3>
             <h3>Monthly EMI: ₹{{ monthlyEMI.toFixed(2).toLocaleString() }}</h3>
-          </div>
+          </div> -->
+
+
+          <div v-if="eligibilityAmount !== null" class="result-container">
+  <div class="emi-container">
+    <h3>Monthly EMI: ₹{{ monthlyEMI.toFixed(2).toLocaleString() }}</h3>
+    <h3>Eligible Loan Amount: ₹{{ eligibilityAmount.toLocaleString() }}</h3>
+  
+  </div>
+
+  <div class="graph-container">
+    <LoanChart :loanAmount="eligibilityAmount" :totalPayableAmount="totalPayableAmount" />
+  </div>
+</div>
+
+
         </form>
       </div>
   
    
-      <div v-if="eligibilityAmount !== null" class="graph-container">
-        <LoanChart :loanAmount="eligibilityAmount" :totalPayableAmount="totalPayableAmount" />
-      </div>
+ 
     </div>
   </template>
   
@@ -1488,24 +1505,39 @@ button:disabled {
   </script>
   
   <style scoped>
-  .housingheading {
-    text-align: left;
-    margin-bottom: 15px;
-    margin-left: 24px;
-  }
+.housingheading {
+  font-size: 28px; /* Adjust as needed */
+  font-weight: normal;
+  text-align: left; /* Align text to the left */
+  line-height: 1.3; /* Remove extra space between lines */
+  margin-bottom: 5px; /* Remove bottom margin */
+  margin-left: 0px; /* Adjust left margin if needed */
+  padding-top: 5px;
+  padding-bottom: 10px;
+  
+}
+
+.bold-housing {
+  font-weight: 600; /* Make "Housing Loan" bold */
+
+}
+
   
   .housing-loan-calculator {
+    margin-top: 5px;
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
-    padding: 20px;
+    padding: 30px 20px -2px 20px;
     min-width: 600px;
+    margin-left: 0px;
   }
   
   .calculator-container {
     width: 100%;
-    max-width: 677px;
-    padding: 20px;
+    margin-left: 0px;
+    max-width: 700px;
+    padding: 20px 20px 30px 20px;
     border-radius: 12px;
     background: white;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -1529,14 +1561,23 @@ button:disabled {
     font-weight: bold;
     
     text-align: center;
-    background: #f9f9f9;
+    background: #ffffff !important;
     padding: 10px;
-    border-radius: 8px;
+    /* border-radius: 8px; */
     border: none;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); */
+    /* border-bottom: 2px solid #ddd;  */
   }
-  
-  .graph-container {
+  /* .result-container {
+  margin-top: 15px;
+  padding: 20px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+} */
+
+  /* .graph-container {
     width: 100%;
     max-width: 400px;
     padding: 20px;
@@ -1545,7 +1586,7 @@ button:disabled {
     text-align: center;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   }
-  
+   */
   input,
   select {
     width: 100%;

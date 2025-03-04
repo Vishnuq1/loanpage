@@ -26,7 +26,7 @@
 
 <div class="a">
     <h4>Interest Rate</h4>
-    <h5>starting From</h5>
+    <h5>Starting From</h5>
     <h5 class="interest">8.5%</h5>
     
 </div>
@@ -61,15 +61,16 @@
 
 <div class="a">
     <h4>Interest Rate</h4>
-    <h5>starting From</h5>
+    <h5>Starting From</h5>
     <h5 class="interest">8.5%</h5>
     
 </div>
 
 <div class="a">
     <h4>Tenure</h4>
+    <h5>Starting From</h5>
 <h5>5-30 years</h5>
-<h5>Starting From</h5>
+
 </div>
 </div>
 </div>
@@ -94,8 +95,9 @@
 
 <div  class="a">
     <h4>Interest Rate</h4>
+    <h5>Starting From</h5>
     <h5 class="interest">8.5%</h5>
-    <h5>starting From</h5>
+  
 </div>
 
 <div  class="a">
@@ -125,7 +127,7 @@
 
 <div  class="a">
     <h4>Interest Rate</h4>
-    <h5>starting From</h5>
+    <h5>Starting From</h5>
     <h5 class="interest">8.5%</h5>
     
 </div>
@@ -164,8 +166,9 @@
 
 <div  class="a">
     <h4>Tenure</h4>
+    <h5>Starting From</h5>
 <h5>5-30 years</h5>
-<h5>Starting From</h5>
+
 </div>
 </div>
 </div>
@@ -199,9 +202,9 @@
     <div class="address">
 
 
-<input type="text" placeholder="Enter your city">
-<input type="text" placeholder="Enter your locality">
-<input type="text" placeholder="Enter your pincode">
+<input type="text" placeholder="Enter city">
+<input type="text" placeholder="Enter locality">
+<input type="text" placeholder="Enter pincode">
 </div>
 
 </div>

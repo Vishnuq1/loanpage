@@ -83,7 +83,8 @@ export default {
 </script>
 
 <template>
-  <h1 class="creditheading">Check Your Credit Score</h1>
+<h1 class="creditheading">Check Your <span class="bold-credit">Credit Score</span></h1>
+
 
   <div class="credit-score-container">
  
@@ -151,16 +152,30 @@ export default {
   /* text-align: center; */
   margin-top: 20px;
   display: flex;
+  margin-left: 0;
   
  
 }
-.creditheading{
+/* .creditheading{
   text-align: left;
   margin-bottom: 45px;
   margin-left: 28px;
+} */
+.creditheading {
+  font-size: 28px; /* Adjust as needed */
+  font-weight: normal;
+  text-align: left; /* Align text to the left */
+  margin-bottom: 5px;
+  margin-top: 15px;
 }
+
+.bold-credit {
+  font-weight: 600; /* Make "Credit Score" bold */
+  color: #000; /* Ensure it appears dark */
+}
+
 img {
-  width: 500px;
+  width: 350px;
   height: 605px;
   /* margin-top: 10px; */
   border-radius: 10px;
@@ -168,20 +183,29 @@ img {
 }
 /* Form Box with Outline */
 .form-box {
-  border: 1px solid #007bff;
-  padding: 20px;
+  /* border: 1px solid #007bff;
+  padding: 20px 20px 20px 20px;
   border-radius: 10px;
-  width: 450px;
-  margin: 0 20px 20px 30px;
+  width: 650px;
+  margin: 0 20px 20px 0px;
+  background: #ffffff;
+  text-align: left; */
+
+  /* border: 1px solid #007bff; */
+  padding: 20px 20px 20px 20px;
+  border-radius: 10px;
+  width: 700px;
+  margin: 0 20px 20px 0px;
   background: #ffffff;
   text-align: left;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Added shadow */
 
 }
 
 /* Input Styles */
 .input-group {
   position: relative;
-  width: 100%;
+  width: 68%;
   margin: 15px 0;
   text-align: left;
 }
@@ -218,13 +242,15 @@ input {
   /* align-items: right; */
   justify-content: flex-start; 
   gap: 8px;
-  margin-top: 10px;
+  margin-top: 15px;
   font-family: 'Roboto', sans-serif;
   font-weight: lighter;
   font-weight: 200;
   size: 15px;
   line-height: 17.58px;
   opacity: 0.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
  
 }
 
@@ -247,14 +273,26 @@ input {
 
 /* Button Styles */
 button {
-  margin: 10px;
+  /* margin: 10px;
   padding: 8px 15px;
   cursor: pointer;
   border: none;
   background-color: #007bff;
   color: white;
   border-radius: 5px;
-  width: 100%;
+  width: 100%; */
+
+
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+
 }
 
 button:disabled {
